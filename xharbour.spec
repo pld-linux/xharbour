@@ -1,7 +1,16 @@
 #
 # Conditional build:
-#%bcond_with	tests		# build with tests
-#%bcond_without	tests		# build without tests
+# --with static      - link all binaries with static libs
+# --with adsrdd      - build ads RDD
+# --with mysql       - build mysql lib
+# --with pgsql       - build pgsql lib
+# --with odbc        - build build odbc lib
+# --with hrbsh       - build /etc/profile.d/harb.sh (not necessary)
+# --without nf       - do not build nanforum lib
+# --without x11      - do not build GTXVT and GTXWC
+# --without gpm      - build GTSLN and GTCRS without GPM support
+# --without gtsln    - do not build GTSLN
+######################################################################
 #
 Summary:	Backwards compatible Clipper Language compiler and preprocessor.
 Summary(pl):	Zgodny wstecz kompilator clippera oraz preprocesor
@@ -32,12 +41,12 @@ URL:		http://www.xharbour.org
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-%{dname} is a CA-Clipper compatible compiler for multiple platforms. This
-package includes a compiler, pre-processor, header files, virtual machine
-and documentation.
+%{dname} is a CA-Clipper compatible compiler for multiple platforms.
+This package includes a compiler, pre-processor, header files, virtual
+machine and documentation.
 
-See README.RPM in the documentation directory for information specific to
-this RPM distribution.
+See README.RPM in the documentation directory for information specific
+to this RPM distribution.
 
 %description -l pl
 %{dname} to kompatybilny z jЙzykiem CA-Clipper kompilator rozwijany na
@@ -45,27 +54,156 @@ wielu rС©nych platformach. Ten pakiet zawiera kompilator, preprocesor,
 zbiory nagЁСwkowe, wirtualn╠ maszynЙ oraz dokumentacjЙ.
 
 %description -l pt_BR
-%{dname} ~B um compilador Clipper compativel para multiplas plataformas.
-Esse pacote contem um compilador, um pr~B-processador, arquivos de cabe~Galho
-uma maquina virtual e documenta~Gфo.
+%{dname} ~B um compilador Clipper compativel para multiplas
+plataformas. Esse pacote contem um compilador, um pr~B-processador,
+arquivos de cabe~Galho uma maquina virtual e documenta~Gфo.
 
 %description -l ru
-%{dname} - многоплатформенный компилятор, совместимый с языком CA-Clipper.
-Этот пакет содержит компилятор, препроцессор, файлы заголовков, виртуальную
-машину и документацию.
+%{dname} - многоплатформенный компилятор, совместимый с языком
+CA-Clipper. Этот пакет содержит компилятор, препроцессор, файлы
+заголовков, виртуальную машину и документацию.
 
-#%package subpackage
-#Summary:	-
-#Summary(pl):	-
-#Group:		-
-######		Unknown group!
 
-#%description subpackage
+%package lib
+Summary:        Shared runtime libaries for %{dname} compiler
+Summary(pl):    Dzielone bilioteki dla kompilatora %{dname}
+Summary(ru):    Совместно используемые библиотеки для компилятора %{dname}
+Group:          Development/Languages
+Provides:       lib%{name}.so lib%{name}mt.so
 
-#%description subpackage -l pl
+%description lib
+%{dname} is a Clipper compatible compiler.
+This package provides %{dname} runtime shared libraries for programs
+linked dynamically.
+
+%description -l pl lib
+%{dname} to kompatybilny z jЙzykiem CA-Clipper kompilator.
+Ten pakiet udostЙpnia dzielone bilioteki kompilatora %{dname}
+dla programСw konsolidowanych dynamicznie.
+
+%description -l pt_BR lib
+%{dname} ~B um compilador compativel com o Clipper.
+Esse pacote %{dname} provem as bibliotecas compartilhadas para programas
+linkados dinamicamente.
+
+%description -l ru lib
+%{dname} - компилятор, совместимый с языком CA-Clipper.
+Этот пакет содержит совместно используемые библиотеки %{dname},
+необходимые для работы динамически скомпонованных программ.
+
+
+%package static
+Summary:        Static runtime libaries for %{dname} compiler
+Summary(pl):    Statyczne bilioteki dla kompilatora %{dname}
+Summary(ru):    Статические библиотеки для компилятора %{dname}
+Group:          Development/Languages
+Requires:       %{name} = %{version}
+
+%description static
+%{dname} is a Clipper compatible compiler.
+This package provides %{dname} static runtime libraries for static
+program linking.
+
+%description -l pl static
+%{dname} to kompatybilny z jЙzykiem CA-Clipper kompilator.
+Ten pakiet udostЙpnia statyczne bilioteki dla kompilatora %{dname}
+niezbЙdne do statycznej konsolidacji programСw.
+
+%description -l pt_BR static
+%{dname} ~B um compilador compativel com o clippe.
+Esse pacote %{dname} provem as bibliotecas  de run time staticas para linkagem
+dos os programas
+
+%description -l ru static
+%{dname} - компилятор, совместимый с языком CA-Clipper.
+Этот пакет содержит статические библиотеки компилятора %{dname},
+необходимые для статической компоновки программ.
+
+
+
+%package contrib
+Summary:        Contrib runtime libaries for %{dname} compiler
+Summary(pl):    Bilioteki z drzewa contrib dla kompilatora %{dname}
+Summary(pt_BR): Libs contrib para %{dname}
+Summary(ru):    Библиотеки из дерева contrib для компилятора %{dname}
+Group:          Development/Languages
+Requires:       %{name} = %{version}
+
+%description contrib
+%{dname} is a Clipper compatible compiler.
+This package provides %{dname} contrib libraries for program linking.
+
+%description -l pl contrib
+%{dname} to kompatybilny z jЙzykiem CA-Clipper kompilator.
+Ten pakiet udostЙpnia statyczne bilioteki z drzewa contrib dla
+kompilatora %{dname}.
+
+%description -l pt_BR contrib
+%{dname} ~B um compilador compativel com o clippe.
+Esse pacote %{dname} provem as bibliotecas contrib para linkagem
+dos programas.
+
+%description -l ru contrib
+%{dname} - компилятор, совместимый с языком CA-Clipper.
+Этот пакет содержит статические библиотеки %{dname} из дерева contrib.
+
+
+%package pp
+Summary:        Clipper/Harbour/xBase compatible Pre-Processor, DOT prompt and interpreter
+Summary(pl):    Kompatybilny z Clipper/Harbour/xBase Preprocesor i interpreter
+Summary(ru):    Совместимый с Clipper/Harbour/xBase препроцессор и интерпретатор
+Copyright:      GPL
+Group:          Development/Languages
+Requires:       %{name} = %{version}
+
+%description pp
+%{dname} is a Clipper compatible compiler.
+This package provides %{dname} PP. It has 3 personalities which are tied
+tightly together.
+1. What is supposed to be 100% Clipper compatible Pre-Processor
+   (with some extensions).
+2. DOT prompt, which suppose to allow most of Clipper syntax.
+3. Finally, PP is a limited Clipper/Harbour/xBase Interpreter. Subject
+   to those same few limitations it can execute most of Harbour syntax.
+   You can write your own xBase scripts by adding to your .prg files
+   #!/usr/bin/pprun
+
+%description -l pl pp
+%{dname} to kompatybilny z jЙzykiem CA-Clipper kompilator.
+Ten pakiet udostЙpnia %{dname} PP, ktСry daje trzy narzЙdzia w jednym.
+1. W 100% kompatybilny z Clipperem preprocesor (z pewnymi rozeszerzeniami)
+2. ╕rodowisko DOT, w ktСrym mo©na u©ywaФ wiЙkszo╤ci skЁadni Clippera
+3. PP to tak©e nieco ograniczony interpreter Clippera. Z uwzglЙdnieniem
+   wspomnianych kilku ograniczeЯ potrafi on uruchomiФ wiЙkszo╤Ф skЁadni
+   Harbour. Mo©esz napisaФ swСj wЁasny skrypt xBase dodaj╠c do pliku .prg
+   #!/usr/bin/pprun
+
+%description -l pt_BR pp
+%{dname} ~B um compilador Clipper compativel.
+Esse pacote provem o %{dname} PP. Ele tem 3 caracteristicas dependentes
+uma da outra.
+1. Que e supostamente ser um Pre-Processor 100% compativel com o Clipper
+   (com algumas extenssДes).
+2. DOT prompt, que supostamente permite a maioria das syntaxes do Clipper.
+3. Finalmente, PP ~B um limitado Interpretador Clipper/Harbour/xBase . Sujeito
+   com algumas limita~GДes que pode executar a maioria da syntaxe do Harbour.
+   Voce pode escrever seus proprios scritps em .prg ao adicionar as seus arquivos
+   .prg #!/usr/bin/pprun
+
+%description -l ru pp
+%{dname} - компилятор, совместимый с языком CA-Clipper.
+Этот пакет содержит препроцессор %{dname}, который состоит из трех тесно
+связанных частей.
+1. 100%-совместимый с Clipper препроцессор (с некоторыми расширениями).
+2. DOT Prompt, в котором можно использовать большинство конструкций Clipper.
+3. Кроме того, PP - ограниченный интерпретатор Clipper. За исключением
+   нескольких описанных ограничений, он может выполнять большинство
+   конструкций Harbour. Можно создавать собственные xBase-скрипты путем
+   добавления в начало .prg-файла строки:
+      #!/usr/bin/pprun
 
 %prep
-%setup -q 
+%setup -q
 
 %build
 # if ac/am/* rebuilding is necessary, do it in this order and add
@@ -78,24 +216,12 @@ uma maquina virtual e documenta~Gфo.
 
 
 ######################################################################
-# Conditional build:
-# --with static      - link all binaries with static libs
-# --with adsrdd      - build ads RDD
-# --with mysql       - build mysql lib
-# --with pgsql       - build pgsql lib
-# --with odbc        - build build odbc lib
-# --with hrbsh       - build /etc/profile.d/harb.sh (not necessary)
-# --without nf       - do not build nanforum lib
-# --without x11      - do not build GTXVT and GTXWC
-# --without gpm      - build GTSLN and GTCRS without GPM support
-# --without gtsln    - do not build GTSLN
-######################################################################
 
 %if "%{platform}" == ""
-%define platform %([ -f /etc/pld-release ] && cat /etc/pld-release|sed -e '/1/ !d' -e 's/[^0-9]//g' -e 's/^/pld/')
+%define platform %([ -f %{_sysconfdir}/pld-release ] && cat %{_sysconfdir}/pld-release|sed -e '/1/ !d' -e 's/[^0-9]//g' -e 's/^/pld/')
 %endif
 
-%define prefix   /usr
+%define prefix %{_prefix}
 %define hb_pref  xhb
 %define hb_arch  export HB_ARCHITECTURE=linux
 %define hb_cc    export HB_COMPILER=gcc
@@ -107,9 +233,9 @@ uma maquina virtual e documenta~Gфo.
 %define hb_gpm   export HB_GPM_MOUSE=%{!?_without_gpm:yes}
 %define hb_sln   export HB_WITHOUT_GTSLN=%{?_without_gtsln:yes}
 %define hb_x11   export HB_WITHOUT_X11=%{?_without_x11:yes}
-%define hb_bdir  export HB_BIN_INSTALL=%{prefix}/bin
-%define hb_idir  export HB_INC_INSTALL=%{prefix}/include/%{name}
-%define hb_ldir  export HB_LIB_INSTALL=%{prefix}/lib/%{name}
+%define hb_bdir  export HB_BIN_INSTALL=%{_bindir}
+%define hb_idir  export HB_INC_INSTALL=%{_includedir}/%{name}
+%define hb_ldir  export HB_LIB_INSTALL=%{_prefix}/lib/%{name}
 %define hb_opt   export HB_GTALLEG=%{?_with_allegro:yes}
 %define hb_cmrc  export HB_COMMERCE=no
 %define hb_ctrb  %{!?_without_nf:libnf} %{?_with_adsrdd:rdd_ads} %{?_with_mysql:mysql} %{?_with_pgsql:pgsql}
@@ -120,46 +246,112 @@ uma maquina virtual e documenta~Gфo.
 
 %{hb_env}
 
-make -r
+%{__make} 
 
 # build contrib libraries
 for l in %{hb_ctrb}
 do
     (cd "contrib/$l"
-     make -r)
+    %{__make} )
 done
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%install 
+%{hb_env}
+
+export _DEFAULT_BIN_DIR=$HB_BIN_INSTALL
+export _DEFAULT_INC_DIR=$HB_INC_INSTALL
+export _DEFAULT_LIB_DIR=$HB_LIB_INSTALL
+export HB_BIN_INSTALL=$RPM_BUILD_ROOT/$HB_BIN_INSTALL
+export HB_INC_INSTALL=$RPM_BUILD_ROOT/$HB_INC_INSTALL
+export HB_LIB_INSTALL=$RPM_BUILD_ROOT/$HB_LIB_INSTALL
+
+mkdir -p $HB_BIN_INSTALL
+mkdir -p $HB_INC_INSTALL
+mkdir -p $HB_LIB_INSTALL
+
+
+
+%{__make} -r -i install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%pre
-
-%post
-
-%preun
-
-%postun
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS CREDITS ChangeLog NEWS README THANKS TODO
 
-# if _sysconfdir != /etc:
-#%%dir %{_sysconfdir}
+%doc ChangeLog
+%doc doc/*.txt
+%doc doc/%{readme}
+%doc doc/en/
+%doc doc/es/
+
+#%dir /etc/harbour
+#%verify(not md5 mtime) %config /etc/harbour.cfg
+#%verify(not md5 mtime) %config /etc/harbour/hb-charmap.def
+%{?_with_hrbsh:/etc/profile.d/harb.sh}
+
+%{prefix}/bin/harbour
+%{prefix}/bin/hb-mkslib
+%{prefix}/bin/%{hb_pref}-build
+%{prefix}/bin/%{hb_pref}cc
+%{prefix}/bin/%{hb_pref}cmp
+%{prefix}/bin/%{hb_pref}lnk
+%{prefix}/bin/%{hb_pref}mk
+%{prefix}/bin/gharbour
+%{prefix}/bin/harbour-link
+#%{prefix}/bin/hbtest
+%{prefix}/bin/hbrun
+%{prefix}/bin/hbpp
+%{prefix}/bin/hbmake
+%dir %{prefix}/include/%{name}
+%{prefix}/include/%{name}/*
+
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
 
 %attr(755,root,root) %{_bindir}/*
 
-%{_datadir}/%{name}
+#%{_datadir}/%{name}
 
-# initscript and it's config
-%attr(754,root,root) /etc/rc.d/init.d/%{name}
-%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
+:
+%files static
+%defattr(-,root,root,755)
+%dir %{prefix}/lib/%{name}
+%{prefix}/lib/%{name}/libcodepage.a
+%{prefix}/lib/%{name}/libcommon.a
+%{prefix}/lib/%{name}/libdb*.a
+%{prefix}/lib/%{name}/libdebug.a
+%{prefix}/lib/%{name}/libfm*.a
+%{prefix}/lib/%{name}/libgt*.a
+%{prefix}/lib/%{name}/libhbtip*.a
+%{?_with_odbc: %{prefix}/lib/%{name}/libhbodbc.a}
+%{prefix}/lib/%{name}/libhbct*.a
+%{prefix}/lib/%{name}/liblang.a
+%{prefix}/lib/%{name}/libmacro*.a
+%{prefix}/lib/%{name}/libnulsys*.a
+%{prefix}/lib/%{name}/libpp*.a
+%{prefix}/lib/%{name}/librdd*.a
+%{prefix}/lib/%{name}/librtl*.a
+%{prefix}/lib/%{name}/libsamples.a
+%{prefix}/lib/%{name}/libvm*.a
 
-#%files subpackage
-#%defattr(644,root,root,755)
-#%doc extras/*.gz
-#%{_datadir}/%{name}-ext
+%files contrib
+%defattr(-,root,root,755)
+%dir %{prefix}/lib/%{name}
+%{!?_without_nf: %{prefix}/lib/%{name}/libnf*.a}
+%{?_with_adsrdd: %{prefix}/lib/%{name}/librddads*.a}
+%{?_with_mysql: %{prefix}/lib/%{name}/libmysql*.a}
+%{?_with_pgsql: %{prefix}/lib/%{name}/libhbpg*.a}
+
+%files lib
+%defattr(-,root,root,755)
+%dir %{prefix}/lib/%{name}
+%{prefix}/lib/%{name}/*.so
+%{prefix}/lib/*.so
+
+%files pp
+%defattr(-,root,root,755)
+%doc utils/xbscript/xbscript.txt
+%{prefix}/bin/xbscript
+%{prefix}/bin/pprun
+%{prefix}/bin/xprompt
