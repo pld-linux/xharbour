@@ -29,6 +29,7 @@ Group:		Development/Languages
 #Icon:		-
 Source0:	http://files.xharbour.org/source/%{name}-%{version}.src.tar.gz
 # Source0-md5:	7e660044656df06d98589da25285fc20
+Source1:	http://files.xharbour.org/source/xharbour-0.99.3.src.contrib.tar.gz
 URL:		http://www.xharbour.org
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -195,7 +196,7 @@ uma da outra.
       #!/usr/bin/pprun
 
 %prep
-%setup -q
+%setup -q -b 1
 
 %build
 # if ac/am/* rebuilding is necessary, do it in this order and add
@@ -262,19 +263,24 @@ mkdir -p $HB_INC_INSTALL
 mkdir -p $HB_LIB_INSTALL
 
 
+#./contrib/pgsql/linux/gcc/libhbpg.a
+for l in %{hb_ctrb}
+do
+    (cd "contrib/$l"
+    %{__make} install )
+done
 
-%{__make} -r -i install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CREDITS ChangeLog NEWS README THANKS TODO
+#%doc AUTHORS CREDITS ChangeLog NEWS README THANKS TODO
 
 %doc ChangeLog
 %doc doc/*.txt
-%doc doc/%{readme}
+#%doc doc/%{readme}
 %doc doc/en/
 %doc doc/es/
 
@@ -292,20 +298,19 @@ rm -rf $RPM_BUILD_ROOT
 %{prefix}/bin/%{hb_pref}mk
 %{prefix}/bin/gharbour
 %{prefix}/bin/harbour-link
-#%{prefix}/bin/hbtest
+%{prefix}/bin/hbtest
 %{prefix}/bin/hbrun
 %{prefix}/bin/hbpp
 %{prefix}/bin/hbmake
+%{prefix}/bin/hbdict
+%{prefix}/bin/hbdict_es_MX.hit
+%{prefix}/bin/hbdict_it_IT.hit
+%{prefix}/bin/hbdict_pl_PL.hit
+%{prefix}/bin/hbdoc
+
 %dir %{prefix}/include/%{name}
 %{prefix}/include/%{name}/*
 
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
-
-%attr(755,root,root) %{_bindir}/*
-
-#%{_datadir}/%{name}
-
-:
 %files static
 %defattr(-,root,root,755)
 %dir %{prefix}/lib/%{name}
@@ -326,11 +331,13 @@ rm -rf $RPM_BUILD_ROOT
 %{prefix}/lib/%{name}/librtl*.a
 %{prefix}/lib/%{name}/libsamples.a
 %{prefix}/lib/%{name}/libvm*.a
+%{prefix}/lib/%{name}/libmain*.a
+%{prefix}/lib/%{name}/libopt*.a
 
 %files contrib
 %defattr(-,root,root,755)
 %dir %{prefix}/lib/%{name}
-#%{!?_without_nf: %{prefix}/lib/%{name}/libnf*.a}
+%{!?_without_nf: %{prefix}/lib/%{name}/libnf*.a}
 %{?_with_adsrdd: %{prefix}/lib/%{name}/librddads*.a}
 %{?_with_mysql: %{prefix}/lib/%{name}/libmysql*.a}
 %{?_with_pgsql: %{prefix}/lib/%{name}/libhbpg*.a}
@@ -346,4 +353,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc utils/xbscript/xbscript.txt
 %{prefix}/bin/xbscript
 #%{prefix}/bin/pprun
-%{prefix}/bin/xprompt
+#%{prefix}/bin/xprompt
