@@ -6,11 +6,16 @@
 # --with pgsql       - build pgsql lib
 # --with odbc        - build build odbc lib
 # --with hrbsh       - build /etc/profile.d/harb.sh (not necessary)
-# --without nf       - do not build nanforum lib
 # --without x11      - do not build GTXVT and GTXWC
 # --without gpm      - build GTSLN and GTCRS without GPM support
 # --without gtsln    - do not build GTSLN
 ######################################################################
+#### --without nf       - do not build nanforum lib doesn't work now.
+######################################################################
+#
+# TODO:
+# nf
+# pprun
 #
 Summary:	Backwards compatible Clipper Language compiler and preprocessor.
 Summary(pl):	Zgodny wstecz kompilator clippera oraz preprocesor
@@ -24,20 +29,7 @@ Group:		Development/Languages
 #Icon:		-
 Source0:	http://files.xharbour.org/source/%{name}-%{version}.src.tar.gz
 # Source0-md5:	7e660044656df06d98589da25285fc20
-#Source1:	-
-# Source1-md5:	-
-#Patch0:		%{name}-what.patch
 URL:		http://www.xharbour.org
-#BuildRequires:	-
-#PreReq:		-
-#Requires(pre,post):	-
-#Requires(preun):	-
-#Requires(postun):	-
-#Requires:	-
-#Provides:	-
-#Obsoletes:	-
-#Conflicts:	-
-#BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -338,7 +330,7 @@ rm -rf $RPM_BUILD_ROOT
 %files contrib
 %defattr(-,root,root,755)
 %dir %{prefix}/lib/%{name}
-%{!?_without_nf: %{prefix}/lib/%{name}/libnf*.a}
+#%{!?_without_nf: %{prefix}/lib/%{name}/libnf*.a}
 %{?_with_adsrdd: %{prefix}/lib/%{name}/librddads*.a}
 %{?_with_mysql: %{prefix}/lib/%{name}/libmysql*.a}
 %{?_with_pgsql: %{prefix}/lib/%{name}/libhbpg*.a}
@@ -353,5 +345,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,755)
 %doc utils/xbscript/xbscript.txt
 %{prefix}/bin/xbscript
-%{prefix}/bin/pprun
+#%{prefix}/bin/pprun
 %{prefix}/bin/xprompt
