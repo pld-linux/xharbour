@@ -17,7 +17,7 @@
 # - fix pt_BR (utf-8 broken by 8-bit copy-paste?)
 #
 Summary:	Backwards compatible Clipper Language compiler and preprocessor
-Summary(pl.UTF-8):   Zgodny wstecz kompilator i preprocesor Clippera
+Summary(pl.UTF-8):	Zgodny wstecz kompilator i preprocesor Clippera
 Name:		xharbour
 Version:	0.99.3
 Release:	0.1
@@ -56,8 +56,8 @@ CA-Clipper. Этот пакет содержит компилятор, преп�
 
 %package lib
 Summary:	Shared runtime libaries for xHarbour compiler
-Summary(pl.UTF-8):   Dzielone bilioteki dla kompilatora xHarbour
-Summary(ru.UTF-8):   Совместно используемые библиотеки для компилятора xHarbour
+Summary(pl.UTF-8):	Dzielone bilioteki dla kompilatora xHarbour
+Summary(ru.UTF-8):	Совместно используемые библиотеки для компилятора xHarbour
 Group:		Libraries
 # XXX: should be autodetected
 Provides:	lib%{name}.so lib%{name}mt.so
@@ -83,8 +83,8 @@ xHarbour - компилятор, совместимый с языком CA-Clipp
 
 %package static
 Summary:	Static runtime libaries for xHarbour compiler
-Summary(pl.UTF-8):   Statyczne bilioteki dla kompilatora xHarbour
-Summary(ru.UTF-8):   Статические библиотеки для компилятора xHarbour
+Summary(pl.UTF-8):	Statyczne bilioteki dla kompilatora xHarbour
+Summary(ru.UTF-8):	Статические библиотеки для компилятора xHarbour
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -109,9 +109,9 @@ xHarbour - компилятор, совместимый с языком CA-Clipp
 
 %package contrib
 Summary:	Contrib runtime libaries for xHarbour compiler
-Summary(pl.UTF-8):   Bilioteki z drzewa contrib dla kompilatora xHarbour
-Summary(pt_BR.UTF-8):   Libs contrib para xHarbour
-Summary(ru.UTF-8):   Библиотеки из дерева contrib для компилятора xHarbour
+Summary(pl.UTF-8):	Bilioteki z drzewa contrib dla kompilatora xHarbour
+Summary(pt_BR.UTF-8):	Libs contrib para xHarbour
+Summary(ru.UTF-8):	Библиотеки из дерева contrib для компилятора xHarbour
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -134,8 +134,8 @@ xHarbour - компилятор, совместимый с языком CA-Clipp
 
 %package pp
 Summary:	Clipper/Harbour/xBase compatible Pre-Processor, DOT prompt and interpreter
-Summary(pl.UTF-8):   Kompatybilny z Clipper/Harbour/xBase Preprocesor i interpreter
-Summary(ru.UTF-8):   Совместимый с Clipper/Harbour/xBase препроцессор и интерпретатор
+Summary(pl.UTF-8):	Kompatybilny z Clipper/Harbour/xBase Preprocesor i interpreter
+Summary(ru.UTF-8):	Совместимый с Clipper/Harbour/xBase препроцессор и интерпретатор
 License:	GPL
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
