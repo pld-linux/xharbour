@@ -17,7 +17,7 @@
 # - fix pt_BR (utf-8 broken by 8-bit copy-paste?)
 #
 Summary:	Backwards compatible Clipper Language compiler and preprocessor
-Summary(pl):	Zgodny wstecz kompilator i preprocesor Clippera
+Summary(pl.UTF-8):   Zgodny wstecz kompilator i preprocesor Clippera
 Name:		xharbour
 Version:	0.99.3
 Release:	0.1
@@ -39,25 +39,25 @@ machine and documentation.
 See README.RPM in the documentation directory for information specific
 to this RPM distribution.
 
-%description -l pl
-xHarbour to kompatybilny z jЙzykiem CA-Clipper kompilator rozwijany na
-wielu rС©nych platformach. Ten pakiet zawiera kompilator, preprocesor,
-pliki nagЁСwkowe, wirtualn╠ maszynЙ oraz dokumentacjЙ.
+%description -l pl.UTF-8
+xHarbour to kompatybilny z jд≥zykiem CA-Clipper kompilator rozwijany na
+wielu rцЁе╪nych platformach. Ten pakiet zawiera kompilator, preprocesor,
+pliki nagе┌цЁwkowe, wirtualnд┘ maszynд≥ oraz dokumentacjд≥.
 
-%description -l pt_BR
+%description -l pt_BR.UTF-8
 xHarbour ~B um compilador Clipper compativel para multiplas
 plataformas. Esse pacote contem um compilador, um pr~B-processador,
-arquivos de cabe~Galho uma maquina virtual e documenta~Gфo.
+arquivos de cabe~Galho uma maquina virtual e documenta~Gц├o.
 
-%description -l ru
-xHarbour - многоплатформенный компилятор, совместимый с языком
-CA-Clipper. Этот пакет содержит компилятор, препроцессор, файлы
-заголовков, виртуальную машину и документацию.
+%description -l ru.UTF-8
+xHarbour - п╪п╫п╬пЁп╬п©п╩п╟я┌я└п╬я─п╪п╣п╫п╫я▀п╧ п╨п╬п╪п©п╦п╩я▐я┌п╬я─, я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ я▐п╥я▀п╨п╬п╪
+CA-Clipper. п╜я┌п╬я┌ п©п╟п╨п╣я┌ я│п╬п╢п╣я─п╤п╦я┌ п╨п╬п╪п©п╦п╩я▐я┌п╬я─, п©я─п╣п©я─п╬я├п╣я│я│п╬я─, я└п╟п╧п╩я▀
+п╥п╟пЁп╬п╩п╬п╡п╨п╬п╡, п╡п╦я─я┌я┐п╟п╩я▄п╫я┐я▌ п╪п╟я┬п╦п╫я┐ п╦ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦я▌.
 
 %package lib
 Summary:	Shared runtime libaries for xHarbour compiler
-Summary(pl):	Dzielone bilioteki dla kompilatora xHarbour
-Summary(ru):	Совместно используемые библиотеки для компилятора xHarbour
+Summary(pl.UTF-8):   Dzielone bilioteki dla kompilatora xHarbour
+Summary(ru.UTF-8):   п║п╬п╡п╪п╣я│я┌п╫п╬ п╦я│п©п╬п╩я▄п╥я┐п╣п╪я▀п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ п╨п╬п╪п©п╦п╩я▐я┌п╬я─п╟ xHarbour
 Group:		Libraries
 # XXX: should be autodetected
 Provides:	lib%{name}.so lib%{name}mt.so
@@ -66,25 +66,25 @@ Provides:	lib%{name}.so lib%{name}mt.so
 xHarbour is a Clipper compatible compiler. This package provides
 xHarbour runtime shared libraries for programs linked dynamically.
 
-%description lib -l pl
-xHarbour to kompatybilny z jЙzykiem CA-Clipper kompilator. Ten pakiet
-udostЙpnia dzielone bilioteki kompilatora xHarbour dla programСw
+%description lib -l pl.UTF-8
+xHarbour to kompatybilny z jд≥zykiem CA-Clipper kompilator. Ten pakiet
+udostд≥pnia dzielone bilioteki kompilatora xHarbour dla programцЁw
 konsolidowanych dynamicznie.
 
-%description lib -l pt_BR
+%description lib -l pt_BR.UTF-8
 xHarbour ~B um compilador compativel com o Clipper. Esse pacote
 xHarbour provem as bibliotecas compartilhadas para programas linkados
 dinamicamente.
 
-%description lib -l ru
-xHarbour - компилятор, совместимый с языком CA-Clipper. Этот пакет
-содержит совместно используемые библиотеки xHarbour, необходимые для
-работы динамически скомпонованных программ.
+%description lib -l ru.UTF-8
+xHarbour - п╨п╬п╪п©п╦п╩я▐я┌п╬я─, я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ я▐п╥я▀п╨п╬п╪ CA-Clipper. п╜я┌п╬я┌ п©п╟п╨п╣я┌
+я│п╬п╢п╣я─п╤п╦я┌ я│п╬п╡п╪п╣я│я┌п╫п╬ п╦я│п©п╬п╩я▄п╥я┐п╣п╪я▀п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ xHarbour, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐
+я─п╟п╠п╬я┌я▀ п╢п╦п╫п╟п╪п╦я┤п╣я│п╨п╦ я│п╨п╬п╪п©п╬п╫п╬п╡п╟п╫п╫я▀я┘ п©я─п╬пЁя─п╟п╪п╪.
 
 %package static
 Summary:	Static runtime libaries for xHarbour compiler
-Summary(pl):	Statyczne bilioteki dla kompilatora xHarbour
-Summary(ru):	Статические библиотеки для компилятора xHarbour
+Summary(pl.UTF-8):   Statyczne bilioteki dla kompilatora xHarbour
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ п╨п╬п╪п©п╦п╩я▐я┌п╬я─п╟ xHarbour
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -92,26 +92,26 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 xHarbour is a Clipper compatible compiler. This package provides
 xHarbour static runtime libraries for static program linking.
 
-%description static -l pl
-xHarbour to kompatybilny z jЙzykiem CA-Clipper kompilator. Ten pakiet
-udostЙpnia statyczne bilioteki dla kompilatora xHarbour niezbЙdne do
-statycznej konsolidacji programСw.
+%description static -l pl.UTF-8
+xHarbour to kompatybilny z jд≥zykiem CA-Clipper kompilator. Ten pakiet
+udostд≥pnia statyczne bilioteki dla kompilatora xHarbour niezbд≥dne do
+statycznej konsolidacji programцЁw.
 
-%description static -l pt_BR
+%description static -l pt_BR.UTF-8
 xHarbour ~B um compilador compativel com o clippe. Esse pacote
 xHarbour provem as bibliotecas de run time staticas para linkagem dos
 os programas
 
-%description static -l ru
-xHarbour - компилятор, совместимый с языком CA-Clipper. Этот пакет
-содержит статические библиотеки компилятора xHarbour, необходимые для
-статической компоновки программ.
+%description static -l ru.UTF-8
+xHarbour - п╨п╬п╪п©п╦п╩я▐я┌п╬я─, я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ я▐п╥я▀п╨п╬п╪ CA-Clipper. п╜я┌п╬я┌ п©п╟п╨п╣я┌
+я│п╬п╢п╣я─п╤п╦я┌ я│я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╨п╬п╪п©п╦п╩я▐я┌п╬я─п╟ xHarbour, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐
+я│я┌п╟я┌п╦я┤п╣я│п╨п╬п╧ п╨п╬п╪п©п╬п╫п╬п╡п╨п╦ п©я─п╬пЁя─п╟п╪п╪.
 
 %package contrib
 Summary:	Contrib runtime libaries for xHarbour compiler
-Summary(pl):	Bilioteki z drzewa contrib dla kompilatora xHarbour
-Summary(pt_BR):	Libs contrib para xHarbour
-Summary(ru):	Библиотеки из дерева contrib для компилятора xHarbour
+Summary(pl.UTF-8):   Bilioteki z drzewa contrib dla kompilatora xHarbour
+Summary(pt_BR.UTF-8):   Libs contrib para xHarbour
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╦п╥ п╢п╣я─п╣п╡п╟ contrib п╢п╩я▐ п╨п╬п╪п©п╦п╩я▐я┌п╬я─п╟ xHarbour
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -119,23 +119,23 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 xHarbour is a Clipper compatible compiler. This package provides
 xHarbour contrib libraries for program linking.
 
-%description contrib -l pl
-xHarbour to kompatybilny z jЙzykiem CA-Clipper kompilator. Ten pakiet
-udostЙpnia statyczne bilioteki z drzewa contrib dla kompilatora
+%description contrib -l pl.UTF-8
+xHarbour to kompatybilny z jд≥zykiem CA-Clipper kompilator. Ten pakiet
+udostд≥pnia statyczne bilioteki z drzewa contrib dla kompilatora
 xHarbour.
 
-%description contrib -l pt_BR
+%description contrib -l pt_BR.UTF-8
 xHarbour ~B um compilador compativel com o clippe. Esse pacote
 xHarbour provem as bibliotecas contrib para linkagem dos programas.
 
-%description contrib -l ru
-xHarbour - компилятор, совместимый с языком CA-Clipper. Этот пакет
-содержит статические библиотеки xHarbour из дерева contrib.
+%description contrib -l ru.UTF-8
+xHarbour - п╨п╬п╪п©п╦п╩я▐я┌п╬я─, я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ я▐п╥я▀п╨п╬п╪ CA-Clipper. п╜я┌п╬я┌ п©п╟п╨п╣я┌
+я│п╬п╢п╣я─п╤п╦я┌ я│я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ xHarbour п╦п╥ п╢п╣я─п╣п╡п╟ contrib.
 
 %package pp
 Summary:	Clipper/Harbour/xBase compatible Pre-Processor, DOT prompt and interpreter
-Summary(pl):	Kompatybilny z Clipper/Harbour/xBase Preprocesor i interpreter
-Summary(ru):	Совместимый с Clipper/Harbour/xBase препроцессор и интерпретатор
+Summary(pl.UTF-8):   Kompatybilny z Clipper/Harbour/xBase Preprocesor i interpreter
+Summary(ru.UTF-8):   п║п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ Clipper/Harbour/xBase п©я─п╣п©я─п╬я├п╣я│я│п╬я─ п╦ п╦п╫я┌п╣я─п©я─п╣я┌п╟я┌п╬я─
 License:	GPL
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -150,37 +150,37 @@ Interpreter. Subject to those same few limitations it can execute most
 of Harbour syntax. You can write your own xBase scripts by adding to
 your .prg files #!/usr/bin/pprun
 
-%description pp -l pl
-xHarbour to kompatybilny z jЙzykiem CA-Clipper kompilator. Ten pakiet
-udostЙpnia xHarbour PP, ktСry daje trzy narzЙdzia w jednym. 1. W 100%
+%description pp -l pl.UTF-8
+xHarbour to kompatybilny z jд≥zykiem CA-Clipper kompilator. Ten pakiet
+udostд≥pnia xHarbour PP, ktцЁry daje trzy narzд≥dzia w jednym. 1. W 100%
 kompatybilny z Clipperem preprocesor (z pewnymi rozeszerzeniami) 2.
-╕rodowisko DOT, w ktСrym mo©na u©ywaФ wiЙkszo╤ci skЁadni Clippera 3.
-PP to tak©e nieco ograniczony interpreter Clippera. Z uwzglЙdnieniem
-wspomnianych kilku ograniczeЯ potrafi on uruchomiФ wiЙkszo╤Ф skЁadni
-Harbour. Mo©na napisaФ swСj wЁasny skrypt xBase dodaj╠c
+е rodowisko DOT, w ktцЁrym moе╪na uе╪ywaд┤ wiд≥kszoе⌡ci skе┌adni Clippera 3.
+PP to takе╪e nieco ograniczony interpreter Clippera. Z uwzglд≥dnieniem
+wspomnianych kilku ograniczeе└ potrafi on uruchomiд┤ wiд≥kszoе⌡д┤ skе┌adni
+Harbour. Moе╪na napisaд┤ swцЁj wе┌asny skrypt xBase dodajд┘c
 "#!/usr/bin/pprun" do pliku .prg.
 
-%description pp -l pt_BR
+%description pp -l pt_BR.UTF-8
 xHarbour ~B um compilador Clipper compativel. Esse pacote provem o
 xHarbour PP. Ele tem 3 caracteristicas dependentes uma da outra. 1.
 Que e supostamente ser um Pre-Processor 100% compativel com o Clipper
-(com algumas extenssДes). 2. DOT prompt, que supostamente permite a
+(com algumas extenssц╓es). 2. DOT prompt, que supostamente permite a
 maioria das syntaxes do Clipper. 3. Finalmente, PP ~B um limitado
-Interpretador Clipper/Harbour/xBase . Sujeito com algumas limita~GДes
+Interpretador Clipper/Harbour/xBase . Sujeito com algumas limita~Gц╓es
 que pode executar a maioria da syntaxe do Harbour. Voce pode escrever
 seus proprios scritps em .prg ao adicionar as seus arquivos .prg
 #!/usr/bin/pprun
 
-%description pp -l ru
-xHarbour - компилятор, совместимый с языком CA-Clipper. Этот пакет
-содержит препроцессор xHarbour, который состоит из трех тесно
-связанных частей. 1. 100%-совместимый с Clipper препроцессор (с
-некоторыми расширениями). 2. DOT Prompt, в котором можно использовать
-большинство конструкций Clipper. 3. Кроме того, PP - ограниченный
-интерпретатор Clipper. За исключением нескольких описанных
-ограничений, он может выполнять большинство конструкций Harbour. Можно
-создавать собственные xBase-скрипты путем добавления в начало
-.prg-файла строки: #!/usr/bin/pprun
+%description pp -l ru.UTF-8
+xHarbour - п╨п╬п╪п©п╦п╩я▐я┌п╬я─, я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ я▐п╥я▀п╨п╬п╪ CA-Clipper. п╜я┌п╬я┌ п©п╟п╨п╣я┌
+я│п╬п╢п╣я─п╤п╦я┌ п©я─п╣п©я─п╬я├п╣я│я│п╬я─ xHarbour, п╨п╬я┌п╬я─я▀п╧ я│п╬я│я┌п╬п╦я┌ п╦п╥ я┌я─п╣я┘ я┌п╣я│п╫п╬
+я│п╡я▐п╥п╟п╫п╫я▀я┘ я┤п╟я│я┌п╣п╧. 1. 100%-я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ Clipper п©я─п╣п©я─п╬я├п╣я│я│п╬я─ (я│
+п╫п╣п╨п╬я┌п╬я─я▀п╪п╦ я─п╟я│я┬п╦я─п╣п╫п╦я▐п╪п╦). 2. DOT Prompt, п╡ п╨п╬я┌п╬я─п╬п╪ п╪п╬п╤п╫п╬ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄
+п╠п╬п╩я▄я┬п╦п╫я│я┌п╡п╬ п╨п╬п╫я│я┌я─я┐п╨я├п╦п╧ Clipper. 3. п я─п╬п╪п╣ я┌п╬пЁп╬, PP - п╬пЁя─п╟п╫п╦я┤п╣п╫п╫я▀п╧
+п╦п╫я┌п╣я─п©я─п╣я┌п╟я┌п╬я─ Clipper. п≈п╟ п╦я│п╨п╩я▌я┤п╣п╫п╦п╣п╪ п╫п╣я│п╨п╬п╩я▄п╨п╦я┘ п╬п©п╦я│п╟п╫п╫я▀я┘
+п╬пЁя─п╟п╫п╦я┤п╣п╫п╦п╧, п╬п╫ п╪п╬п╤п╣я┌ п╡я▀п©п╬п╩п╫я▐я┌я▄ п╠п╬п╩я▄я┬п╦п╫я│я┌п╡п╬ п╨п╬п╫я│я┌я─я┐п╨я├п╦п╧ Harbour. п°п╬п╤п╫п╬
+я│п╬п╥п╢п╟п╡п╟я┌я▄ я│п╬п╠я│я┌п╡п╣п╫п╫я▀п╣ xBase-я│п╨я─п╦п©я┌я▀ п©я┐я┌п╣п╪ п╢п╬п╠п╟п╡п╩п╣п╫п╦я▐ п╡ п╫п╟я┤п╟п╩п╬
+.prg-я└п╟п╧п╩п╟ я│я┌я─п╬п╨п╦: #!/usr/bin/pprun
 
 %prep
 %setup -q -b 1
